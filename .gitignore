@@ -1,0 +1,46 @@
+# --- Секреты и окружение ---
+.env
+*.env
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+.vite/
+*.local
+
+# --- Playwright (QA) ---
+qa/e2e/test-results/
+qa/e2e/playwright-report/
+qa/e2e/blob-report/
+qa/e2e/.cache/
+
+# --- QA-отчёты (генерируются) ---
+qa/load/report*.csv
+qa/evaluation/precision_report.md
+
+# --- IDE / ОС ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Логи ---
+*.log
+
+# Бинарные файлы запрещены в репозитории, КРОМЕ тестовых документов
+# (tests/fixtures) — они нужны для юнит- и E2E-тестов (QA-03).
+# Каталог backend/tests/fixtures намеренно НЕ игнорируется.
