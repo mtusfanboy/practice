@@ -1,0 +1,36 @@
+[project]
+name = "knowledge-search-backend"
+version = "1.0.0"
+description = "Бэкенд интеллектуальной поисковой системы по базе знаний университета"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+# E/W — pycodestyle (PEP 8), F — pyflakes, I — isort, B — bugbear,
+# UP — pyupgrade, C4 — comprehensions, SIM — simplify.
+select = ["E", "W", "F", "I", "B", "UP", "C4", "SIM"]
+ignore = ["B008"]  # FastAPI использует вызовы в значениях по умолчанию (Depends).
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-q --cov=app --cov-report=term-missing --cov-report=xml"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/main.py", "app/core/clients.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]

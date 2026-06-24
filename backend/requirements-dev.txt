@@ -1,0 +1,14 @@
+# Зависимости для разработки и тестирования.
+-r requirements.txt
+
+# --- Тестирование (QA-01) ---
+pytest==8.3.4
+pytest-asyncio==0.25.2
+pytest-cov==6.0.0
+httpx==0.28.1
+asgi-lifespan==2.1.0
+aiosqlite==0.20.0
+reportlab==4.2.5
+
+# --- Линтинг и форматирование (PEP 8) ---
+ruff==0.9.2
