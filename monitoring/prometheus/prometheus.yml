@@ -1,0 +1,21 @@
+# Конфигурация Prometheus (DO-06).
+# Собирает метрики бэкенд-приложения, экспонируемые по адресу /metrics.
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Метрики FastAPI-приложения: количество запросов, время ответа,
+  # пользовательские метрики поиска (search_requests_total и др.).
+  - job_name: knowledge-search-backend
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["app:8000"]
+        labels:
+          service: backend
+
+  # Самомониторинг Prometheus.
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
