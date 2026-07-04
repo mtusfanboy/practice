@@ -1,0 +1,15 @@
+{
+  "description": "Эталонный набор запросов для оценки качества поиска (QA-05, Precision@3). Поле signature — характерная подстрока, которая должна присутствовать в тексте релевантного фрагмента нужного документа. Набор рассчитан на корпус, загружаемый init.sh (статьи arXiv по машинному обучению). Адаптируйте под свой корпус при необходимости.",
+  "queries": [
+    { "query": "attention is all you need", "signature": "attention" },
+    { "query": "BERT bidirectional transformers", "signature": "bidirectional" },
+    { "query": "deep residual learning", "signature": "residual" },
+    { "query": "very deep convolutional networks", "signature": "convolutional" },
+    { "query": "adam stochastic optimization", "signature": "adam" },
+    { "query": "word representations in vector space", "signature": "word" },
+    { "query": "generative adversarial networks", "signature": "adversarial" },
+    { "query": "u-net image segmentation", "signature": "segmentation" },
+    { "query": "recurrent neural network lstm", "signature": "recurrent" },
+    { "query": "language models few-shot learners", "signature": "language" }
+  ]
+}
