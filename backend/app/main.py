@@ -51,6 +51,7 @@ app = FastAPI(
         "университета. Загрузка PDF/DOCX, полнотекстовый поиск через "
         "Elasticsearch с подсветкой совпадений и кешированием в Redis."
     ),
+    openapi_version="3.0.2",
     openapi_url="/openapi.json",
     docs_url="/docs",
     redoc_url="/redoc",
